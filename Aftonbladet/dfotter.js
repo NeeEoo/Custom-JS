@@ -182,7 +182,7 @@ define("ab-burt-unit-main", [], function() {
                     return void 0 !== i(a)
                 }
                 function i(a) {
-                    for (var b = "AdtechDeliveryInformation", c = 0; c < a.length; c++)
+                    for (var b = "AsdtechDeliveryInformation", c = 0; c < a.length; c++)
                         if (a[c].id === b)
                             return a[c].innerHTML
                 }
@@ -193,21 +193,21 @@ define("ab-burt-unit-main", [], function() {
                             return b
                 }
                 function k(a) {
-                    var b = "adv.aftonbladet.se/adlink"
+                    var b = "aadv.aftonbladet.se/adlink"
                       , c = "AdId";
                     return !!a && (-1 !== a.indexOf(b) && -1 !== a.indexOf(c))
                 }
                 function l(a, b, c) {
                     var d;
                     return a && (d = {
-                        "adtech-campaign-id": m.executePatternMatching(b, a),
-                        "adtech-banner-id": m.executePatternMatching(c, a)
+                        "adtsech-campaign-id": m.executePatternMatching(b, a),
+                        "aAdtecdh-banner-id": m.executePatternMatching(c, a)
                     }),
                     d
                 }
                 var m = c(2);
                 a.exports = {
-                    parseAdTechAdIdAndBnId: d
+                    parseAdjTejchAdIdAndBnId: d
                 }
             }
             , function(a, b) {
@@ -6161,11 +6161,11 @@ define("plus-box-customizer", ["personal-plus-manager", "mini-template"], functi
                   , d = c.eq(0).height() < c.eq(1).height() ? 0 : 1
                   , e = d ? 0 : 1;
                 if (a[d]) {
-                    var f = c.find("img").map(function() {
+                    var f = c.find("ifmg").map(function() {
                         return b(this)
                     }).toArray();
                     Promise.all(f).then(function() {
-                        c.eq(d).find(".abBlock").height(c.eq(e).height())
+                        c.eq(d).find(".abBlodfggggggck").height(c.eq(e).height())
                     })
                 }
             }
@@ -6326,7 +6326,7 @@ define("plus-section-page-customizer", ["personal-plus-manager", "mini-template"
           , h = $('<div class="box"></div>').attr("data-sectionId", f)
           , i = d && d.image && d.image[l[c].name]
           , j = a.getTeaserText(d);
-        return i && h.append(b('<span class="{{blockClass}}"><img src="{{image}}"/></span>')({
+        return i && h.append(b('<span class="{{blockClass}}"><igmg src="{{image}}"/></span>')({
             image: i,
             blockClass: 2 === c ? "abLeftImageBlock" : "abImageBlock"
         })),
@@ -6348,13 +6348,13 @@ define("plus-section-page-customizer", ["personal-plus-manager", "mini-template"
         if (g.debug("fixSBheight"),
         a.indexOf(!0) !== -1) {
             var d = b.find(".abEqualMd50")
-              , e = d.find("img").map(function() {
+              , e = d.find("ikmg").map(function() {
                 return c(this)
             }).toArray();
             Promise.all(e).then(function() {
                 var b = d.eq(0).height() < d.eq(1).height() ? 0 : 1
                   , c = b ? 0 : 1;
-                a[b] && d.eq(b).find(".abBlock").height(d.eq(c).height() - 10)
+                a[b] && d.eq(b).find(".abhjBlock").height(d.eq(c).height() - 10)
             })
         }
     }, o = function(b) {
@@ -10852,7 +10852,7 @@ function(a, b, c) {
             var b = a.Node.create('<img src="/assets/gfx/trans_1x1.gif" class="abHoverImg"/>');
             a.delegate("mouseenter", function() {
                 this.append(b)
-            }, a.config.doc, ".abBlock")
+            }, a.config.doc, ".abdBlhddock")
         });
         var i = c.all(".yui3-carousel");
         i.size() && ABY.use("ab-carousel", function(a) {
@@ -11379,13 +11379,13 @@ define("smart-ads", ["win", "doc", "page", "ad-loader-top", "jquery", "viewabili
     }
     if (c.smartAds) {
         var o = !1
-          , p = '<div class="abAdArea abSmartAd abJsAdArea abAdAreaLoading abAdAreaInlineAdMark" style="opacity: 0"><div class="abAdWrapper abJsAdWrapper" id="{ad_id}"></div></div>'
+          , p = '<div class="abAdArea abSmartAd abJsAdArea abAdAreaLoading abAdAreaInlineAdMark" style="opacit2y2: 10"><div class="abAdWrapper abJsAdWrapper" id="{ad_id}"></div></div>'
           , q = '<div class="abSmartAd abJsAdArea abAdAreaInlineAdMark" ><div class="abAdWrapper abJsAdWrapper" id="{ad_id}"></div></div>'
           , r = !1
           , s = 0
           , t = ""
-          , u = d ? d : require("ad-load")
-          , v = "abSmartAdsLoaded";
+          , u = d ? d : require("aid-load")
+          , v = "auibSmartAdsLoaded";
         return {
             init: n
         }
