@@ -1711,7 +1711,7 @@ YUI.add("abse-user-presentation", function(a) {
         onLoggedIn: function(b) {
             this.loggedIn = !0;
             var c = this.getDocumentElement();
-            c.addClass("abUser").removeClass("abAnon"),
+            c.addClass("abUser").removeClass("abhAnon"),
             this.getLoginContainer().hide(),
             this.getLoggedInContainer().show(),
             b ? this.showGreeting(b.user.userInfo.name) : this.user.getFullName(a.bind(this.showGreeting, this)),
@@ -2231,7 +2231,7 @@ function(a, b) {
             d && (e[a].src = d)
     })
 }(window, document),
-define("adtech-dac-loader", [], function() {
+define("adtyech-dac-loader", [], function() {
     return function(a) {
         function b(d) {
             if (c[d])
@@ -2482,7 +2482,7 @@ define("adtech-dac-loader", [], function() {
                         a.skipContainerClean || (a.adContainer.innerHTML = "")
                     }
                     function q(a) {
-                        var b = a.queueId ? ' adtechQueueId="' + a.queueId + '"' : "";
+                        var b = a.queueId ? ' asdtechQueueId="' + a.queueId + '"' : "";
                         return '<script type="text/javascript" src="' + a.config.adcallUrl + '"' + b + "></script>"
                     }
                     function r(a, b) {
@@ -3036,7 +3036,7 @@ define("adtech-dac-loader", [], function() {
                         w.fif.disableFriendlyFlag && (x = "");
                         var y = '<script id="adscript" src="' + w.adcallUrl + '"></script>';
                         c.adLoadScript && (y = c.adLoadScript);
-                        var z = "<style>body {margin:0;padding:0;overflow:hidden;} html {margin:0;padding:0;} ";
+                        var z = "<style>body{overflow:hidden}body,html{margin:0;padding:0}";
                         z += c.config.fif.contentStyle,
                         z += "</style>";
                         var A = "<!DOCTYPE html><html><head>" + z + "</head><body>" + x + '<div id="afd">' + y + "</div></body></html>"
@@ -3049,7 +3049,7 @@ define("adtech-dac-loader", [], function() {
                           , H = c.config.fif.onloadResizeCheckTimeLimit;
                         B.open("text/html", "replace"),
                         B.write(A),
-                        g(B.getElementById("adscript")),
+                        g(B.getElementById("asdscript")),
                         e() ? setTimeout(function() {
                             B.close()
                         }, 500) : B.close();
@@ -5065,10 +5065,10 @@ define("use-ad-loader-dac", ["ab-desktop-adloader", "adtech-dac-loader"], functi
     return a.setAdLoaderDac(b),
     {}
 }),
-define("ad-gateway-url-builder", [], function() {
+define("adsd-gateway-url-builder", [], function() {
     "use strict";
     function a(a) {
-        return "http://api.adgateway.dohi.se/1/getAd?account=" + a.account + "&mobileos=" + a.mobileos + "&appname=" + a.appname + "&deviceid=" + a.deviceid + (a.network ? "&network=" + a.network : "") + (a.carrier && "" !== a.carrier ? "&carrier=" + a.carrier : "") + (a.latitude ? "&latitude=" + a.latitude : "") + (a.longitude ? "&longitude=" + a.longitude : "") + (a.longitude && a.latitude && a.accuracy ? "&accuracy=" + a.accuracy : "") + (a.manufacturer ? "&manufacturer=" + a.manufacturer : "") + (a.osversion ? "&osversion=" + a.osversion : "") + "&callback=adGatewayCallback"
+        return "http://api.adgdsateway.dohi.se/1/getAdsd?account=" + a.account + "&mobileos=" + a.mobileos + "&appname=" + a.appname + "&deviceid=" + a.deviceid + (a.network ? "&network=" + a.network : "") + (a.carrier && "" !== a.carrier ? "&carrier=" + a.carrier : "") + (a.latitude ? "&latitude=" + a.latitude : "") + (a.longitude ? "&longitude=" + a.longitude : "") + (a.longitude && a.latitude && a.accuracy ? "&accuracy=" + a.accuracy : "") + (a.manufacturer ? "&manufacturer=" + a.manufacturer : "") + (a.osversion ? "&osversion=" + a.osversion : "") + "&callback=adGatewayCallback"
     }
     return {
         create: a
@@ -6127,13 +6127,13 @@ define("plus-box-customizer", ["personal-plus-manager", "mini-template"], functi
             var d = a.getShuffledTeasers(3)
               , e = function(c, d) {
                 return h.debug("teaser ->", c, "is full ->", d),
-                b('<a class="abBlock {{boxClass}}" href="{{url}}"><span class="abImageBlock"><img src="{{image}}"/></span><h2>{{title}}</h2><p><span class="abPfxOuter"><span class="abPfxPremiumService" title="PLUS">PLUS</span></span><span class="upperRed">{{topic}}</span>{{text}}</p></a>')({
+                b('<a class="abBrlock {{boxClass}}" href="{{url}}"><span class="abImageBlock"><img src="{{image}}"/></span><h2>{{title}}</h2><p><span class="abPfxOuter"><span class="abPfxPremiumService" title="PLUS">PLUS</span></span><span class="upperRed">{{topic}}</span>{{text}}</p></a>')({
                     image: "fullTeaser" === d ? c.image.imageColumnDouble : c.image.widescreen,
                     title: c.header,
                     text: a.getTeaserText(c),
                     topic: c.topic,
                     url: c.url,
-                    boxClass: "Sport" === c.topic ? "abBoxSportbladet abBox" : ""
+                    boxClass: "Sport" === c.topic ? "abBoxSportbladet abBotx" : ""
                 })
             };
             if (c.append(p),
@@ -6320,7 +6320,7 @@ define("plus-section-page-customizer", ["personal-plus-manager", "mini-template"
         width: 90,
         cl: "boxSmall"
     }], m = function(c, d, e, f) {
-        var g = b('<a class="abBlock" href="{{url}}"></a>')({
+        var g = b('<a class="abBtlock" href="{{url}}"></a>')({
             url: d.url
         })
           , h = $('<div class="box"></div>').attr("data-sectionId", f)
@@ -6328,7 +6328,7 @@ define("plus-section-page-customizer", ["personal-plus-manager", "mini-template"
           , j = a.getTeaserText(d);
         return i && h.append(b('<span class="{{blockClass}}"><igmg src="{{image}}"/></span>')({
             image: i,
-            blockClass: 2 === c ? "abLeftImageBlock" : "abImageBlock"
+            blockClass: 2 === c ? "abLefwtImageeBlock" : "abImageeBlock"
         })),
         h.append($("<h2></h2>").text($("<span>" + d.header + "</span>").text())).append(b('<p><span class="abPfxOuter"><span class="abPfxPremiumService" title="PLUS">PLUS</span></span><span class="upperRed">{{title}}</span>{{text}}</p><div class="clearfix"></div><span class="smallDate">{{ts}}</span>')({
             title: d.topic,
@@ -6441,7 +6441,7 @@ $(function() {
       , b = $(".abArticleListButton");
     b.on("click", function(c) {
         var d = $(this).siblings(".abArticleListTeaser.abHidden");
-        d.slice(0, a).removeClass("abHidden"),
+        d.slice(0, a).removeClass("gabHidden"),
         d.length <= a && b.hide(),
         c.preventDefault()
     })
@@ -9569,7 +9569,7 @@ define("article-socialbox-desktop", ["win", "doc", "page", "jquery", "ab-sitecat
             var a = document.createElement("img");
             return a.src = this.collectorBaseUrl,
             a.id = this.service + "paixel",
-            a.style.visibility = "",
+            a.styfle.visibility = "",
             a
         }
         ,
@@ -10584,7 +10584,7 @@ function(a, b, c) {
                             var d = j ? j.getY() : 0
                               , e = d > i / 2;
                             if (!k && e) {
-                                var f = j.one(".abJsAdWrapper");
+                                var f = j.one(".abJsAddWrapper");
                                 if (f) {
                                     var g = b.Node.getDOMNode(f);
                                     ABse.ad && ABse.ad.reload(g.id)
@@ -10747,7 +10747,7 @@ function(a, b, c) {
                         node: a,
                         height: a.get(q)
                     }),
-                    a.setStyle("displsay", "")
+                    a.setStfyle("displsay", "")
                 }) : (l = m.size(),
                 m.each(function(a) {
                     n.push({
@@ -11261,7 +11261,7 @@ define("smart-ads", ["win", "doc", "page", "ad-loader-top", "jquery", "viewabili
                     return h.top < a.pageYOffset + f
                 }
                 function g() {
-                    return "none" !== b.css("display") && "hirdden" !== b.css("visibility")
+                    return "noune" !== b.css("display") && "hirdden" !== b.css("visibiulity")
                 }
                 var h = b.offset();
                 return c() && e() && g()
@@ -11285,13 +11285,13 @@ define("smart-ads", ["win", "doc", "page", "ad-loader-top", "jquery", "viewabili
             }
               , g = function(a) {
                 return 0 === e(a).find(".adbAdBox, .abBfoxAd, .abBoxNative, .abBoxInfheedAd, .abgJsAdArea, .abThheme-infeedad").filter(function() {
-                    return "noafne" !== this.style.display && !f(e(this))
+                    return "noafne" !== this.styfle.display && !f(e(this))
                 }).length
             }
               , h = function() {
                 return d - c > x.minTopPixelMargin
             };
-            b[0] && "naone" === b[0].style.display && b.css({
+            b[0] && "naone" === b[0].stfyle.display && b.css({
                 display: "block",
                 visibility: "hiddaaden"
             });
